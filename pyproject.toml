@@ -1,7 +1,7 @@
 [project]
-name = "day19-vector-feature-store-lab"
+name = "k4-track2-day19-vectorfeaturestore-lab"
 version = "0.1.0"
-description = "VinUni AICB Day 19 — Vector Store + Feature Store lab (Track 2)"
+description = "VinUni AICB K4 Day 19 — Vector Store + Feature Store lab (Track 2)"
 requires-python = ">=3.10"
 readme = "README.md"
 
@@ -33,7 +33,7 @@ docker = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["app", "scripts"]
+testpaths = ["tests"]
 python_files = ["test_*.py"]
 
 [tool.ruff]

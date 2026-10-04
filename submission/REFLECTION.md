@@ -1,7 +1,7 @@
 # Reflection — Lab 19
 
 **Tên:** _<Họ Tên>_
-**Cohort:** _<A20-K1 / A20-K2 / ...>_
+**Cohort:** _<A20-K4>_
 **Path đã chạy:** _<lite | docker | both>_
 
 ---

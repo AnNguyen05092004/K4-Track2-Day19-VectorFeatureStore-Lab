@@ -38,7 +38,7 @@ lab: ## [lite] Open Jupyter Lab on http://localhost:8888
 benchmark: ## [both] Precision@10 (keyword/semantic/hybrid) + P99 latency table
 	@$(PY) scripts/benchmark.py
 
-test: ## [both] Run pytest (app + scripts)
+test: ## [both] Run pytest (tests)
 	@$(PYTEST) -q
 
 gen-advanced: ## [both] Generate data for the advanced missions (NB6 + NB8)
