@@ -1,0 +1,12 @@
+# Separate, self-contained Feast project for the on-demand transformation demo
+# (NB8). Kept apart from app/feast_repo/ on purpose: NB4's rubric asserts an
+# exact set of feature views there, so this repo must not pollute that registry.
+project: lab19_odfv
+provider: local
+registry: registry.db
+online_store:
+  type: sqlite
+  path: online_store.db
+offline_store:
+  type: file
+entity_key_serialization_version: 3

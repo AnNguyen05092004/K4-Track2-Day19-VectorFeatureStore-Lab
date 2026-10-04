@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+# NOTE: notebooks/*.ipynb IS committed for submission (with output cells preserved
+# for grading). The Jupytext `.py` files are the source-of-truth template;
+# `.ipynb` is the student's executed deliverable.
+
+# Lab artifacts
+data/corpus_vn.jsonl
+data/golden_set.jsonl
+data/qdrant_storage/
+.feast/
+app/feast_repo/data/
+app/feast_repo/registry.db
+app/feast_repo/online_store.db
+
+# Env / secrets
+.env
+.env.local
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Advanced-mission generated artifacts (NB6 + NB8)
+data/agent_queries.jsonl
+app/feast_repo_ondemand/data/
+app/feast_repo_ondemand/registry.db
+app/feast_repo_ondemand/online_store.db

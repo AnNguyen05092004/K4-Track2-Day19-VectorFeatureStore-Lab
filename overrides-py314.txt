@@ -1,0 +1,4 @@
+# Applied by setup-lite.sh ONLY when the venv Python is >= 3.14.
+# feast declares dill~=0.3.0; dill 0.3.9 cannot serialise an on-demand feature
+# view's UDF on 3.14. See the dill note in requirements.txt.
+dill>=0.4,<1.0

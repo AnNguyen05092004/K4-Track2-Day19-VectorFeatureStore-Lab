@@ -1,0 +1,17 @@
+# Full Docker path — Qdrant server + Redis online store + Postgres offline store.
+# Includes everything from requirements.txt (install both for the docker path):
+#   pip install -r requirements.txt -r requirements-full.txt
+
+# Qdrant server (uses qdrant-client from requirements.txt, just toggled to server mode)
+# Redis (Feast online store)
+redis>=5.0,<6.0
+
+# Postgres (Feast offline store)
+psycopg[binary]>=3.2,<4.0
+sqlalchemy>=2.0,<3.0
+
+# Heavier multilingual embeddings (optional; keeps fastembed as default)
+sentence-transformers>=3.3,<4.0        # bge-m3 + jina-clip-v2 etc.
+
+# OpenAI (optional, for the bonus challenge swap-in)
+openai>=1.55,<2.0

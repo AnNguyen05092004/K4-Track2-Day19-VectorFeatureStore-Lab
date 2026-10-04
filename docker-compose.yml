@@ -1,0 +1,55 @@
+# Day 19 lab — full Docker stack.
+# Brings up Qdrant (vector store), Redis (Feast online store), Postgres (Feast offline store).
+# The FastAPI service is intentionally NOT here — students run it locally during dev so
+# `--reload` works. Bonus challenge can wrap the API in a Dockerfile.
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.19.0   # keep in sync with qdrant-client in requirements.txt
+    container_name: day19-qdrant
+    ports:
+      - "6333:6333"   # HTTP API + dashboard
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: day19-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--save", "60", "1", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: day19-postgres
+    environment:
+      POSTGRES_USER: feast
+      POSTGRES_PASSWORD: feast
+      POSTGRES_DB: feast_offline
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U feast -d feast_offline"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  qdrant_storage:
+  redis_data:
+  postgres_data:
