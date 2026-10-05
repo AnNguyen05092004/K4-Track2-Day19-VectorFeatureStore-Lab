@@ -1,0 +1,65 @@
+# Output của: python bonus/demo.py   (EMBEDDING_BACKEND=fastembed -> BAAI/bge-small-en-v1.5, 384d)
+# Sinh lúc: 2026-10-05 16:07 +07. Các số 'Hoạt động gần đây' đến từ Feast và phụ thuộc TTL 1 giờ.
+
+Đã nhớ 6 ghi chú -> 6 chunk cho u_001
+
+==============================================================================
+1. Chỉ vector/keyword hit
+  Q: Tôi đã đọc gì về Kubernetes?
+------------------------------------------------------------------------------
+Hồ sơ: ngôn ngữ ưu tiên=vi; chủ đề quan tâm=cloud; tốc độ đọc=187 wpm.
+Hoạt động gần đây: 11 truy vấn trong 1 giờ qua; 4 chủ đề khác nhau trong 24 giờ.
+Ký ức liên quan:
+  [1] (keyword+vector) Hôm qua mình đọc bài về Kubernetes: HPA (Horizontal Pod Autoscaler) tự động tăng giảm số pod theo CPU. Cluster autoscaler thì thêm node khi pod bị pending. Cần đặt resource requests đúng thì autosc...
+  [2] (keyword+vector) Đọc về bảo mật cloud: IAM theo nguyên tắc least privilege, bật MFA, mã hoá dữ liệu at rest bằng KMS và xoay vòng secret định kỳ.
+  [3] (keyword+vector) Ghi chú về serverless: Cloud Run và Lambda co về 0 khi không có request, đổi lại bị cold start vài trăm mili giây.
+
+==============================================================================
+2. Cần profile (topic_affinity)
+  Q: Recommend đọc gì tiếp
+------------------------------------------------------------------------------
+Hồ sơ: ngôn ngữ ưu tiên=vi; chủ đề quan tâm=cloud; tốc độ đọc=187 wpm.
+Hoạt động gần đây: 11 truy vấn trong 1 giờ qua; 4 chủ đề khác nhau trong 24 giờ.
+Ký ức liên quan:
+  [1] (keyword+vector) Đọc về bảo mật cloud: IAM theo nguyên tắc least privilege, bật MFA, mã hoá dữ liệu at rest bằng KMS và xoay vòng secret định kỳ.
+  [2] (keyword+vector) Ghi chú về serverless: Cloud Run và Lambda co về 0 khi không có request, đổi lại bị cold start vài trăm mili giây.
+  [3] (keyword+vector) Hôm qua mình đọc bài về Kubernetes: HPA (Horizontal Pod Autoscaler) tự động tăng giảm số pod theo CPU. Cluster autoscaler thì thêm node khi pod bị pending. Cần đặt resource requests đúng thì autosc...
+
+==============================================================================
+3. Cần hoạt động gần đây (queries_last_hour)
+  Q: Tôi đang quan tâm gì gần đây?
+------------------------------------------------------------------------------
+Hồ sơ: ngôn ngữ ưu tiên=vi; chủ đề quan tâm=cloud; tốc độ đọc=187 wpm.
+Hoạt động gần đây: 11 truy vấn trong 1 giờ qua; 4 chủ đề khác nhau trong 24 giờ.
+Ký ức liên quan:
+  [1] (vector) Hôm nay thử fine-tune một mô hình embedding nhỏ cho tiếng Việt, loss giảm nhưng recall@10 chưa cải thiện nhiều.
+  [2] (vector) Đọc về bảo mật cloud: IAM theo nguyên tắc least privilege, bật MFA, mã hoá dữ liệu at rest bằng KMS và xoay vòng secret định kỳ.
+  [3] (vector) Ghi chú về serverless: Cloud Run và Lambda co về 0 khi không có request, đổi lại bị cold start vài trăm mili giây.
+
+==============================================================================
+4. Paraphrase (vector thắng)
+  Q: Tài liệu về tự động mở rộng hạ tầng?
+------------------------------------------------------------------------------
+Hồ sơ: ngôn ngữ ưu tiên=vi; chủ đề quan tâm=cloud; tốc độ đọc=187 wpm.
+Hoạt động gần đây: 11 truy vấn trong 1 giờ qua; 4 chủ đề khác nhau trong 24 giờ.
+Ký ức liên quan:
+  [1] (keyword+vector) Đọc về bảo mật cloud: IAM theo nguyên tắc least privilege, bật MFA, mã hoá dữ liệu at rest bằng KMS và xoay vòng secret định kỳ.
+  [2] (keyword+vector) Hôm nay thử fine-tune một mô hình embedding nhỏ cho tiếng Việt, loss giảm nhưng recall@10 chưa cải thiện nhiều.
+  [3] (keyword+vector) Tài liệu về bảo mật API: dùng OAuth2 với JWT ngắn hạn, kiểm tra scope ở mỗi endpoint, tránh lưu token trong localStorage.
+
+==============================================================================
+5. Mixed (hybrid + profile)
+  Q: Cho tôi summary cloud security
+------------------------------------------------------------------------------
+Hồ sơ: ngôn ngữ ưu tiên=vi; chủ đề quan tâm=cloud; tốc độ đọc=187 wpm.
+Hoạt động gần đây: 11 truy vấn trong 1 giờ qua; 4 chủ đề khác nhau trong 24 giờ.
+Ký ức liên quan:
+  [1] (keyword+vector) Ghi chú về serverless: Cloud Run và Lambda co về 0 khi không có request, đổi lại bị cold start vài trăm mili giây.
+  [2] (keyword+vector) Đọc về bảo mật cloud: IAM theo nguyên tắc least privilege, bật MFA, mã hoá dữ liệu at rest bằng KMS và xoay vòng secret định kỳ.
+  [3] (keyword+vector) Hôm qua mình đọc bài về Kubernetes: HPA (Horizontal Pod Autoscaler) tự động tăng giảm số pod theo CPU. Cluster autoscaler thì thêm node khi pod bị pending. Cần đặt resource requests đúng thì autosc...
+
+==============================================================================
+Kiểm tra cô lập user
+  u_002 tự tìm thấy ký ức của mình : True
+  u_001 thấy ký ức của u_002        : False
+OK — mỗi user chỉ thấy memory của chính mình

@@ -17,7 +17,7 @@ entity_key_serialization_version: 3
 # offline_store:
 #   type: postgres
 #   host: localhost
-#   port: 5432
+#   port: 5433
 #   database: feast_offline
 #   user: feast
 #   password: feast

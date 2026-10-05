@@ -117,7 +117,7 @@ cat <<EOF
 
   Qdrant   → http://localhost:6333  (dashboard)
   Redis    → redis://localhost:6379
-  Postgres → postgresql://feast:feast@localhost:5432/feast_offline
+  Postgres → postgresql://feast:feast@localhost:5433/feast_offline
 
 Activate the venv and continue:
 

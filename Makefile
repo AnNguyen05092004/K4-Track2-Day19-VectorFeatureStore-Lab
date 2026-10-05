@@ -41,6 +41,9 @@ benchmark: ## [both] Precision@10 (keyword/semantic/hybrid) + P99 latency table
 test: ## [both] Run pytest (tests)
 	@$(PYTEST) -q
 
+bonus: ## [both] Bonus: run bonus/demo.py (5 queries, needs NB4 run first for Feast data)
+	@$(PY) bonus/demo.py
+
 gen-advanced: ## [both] Generate data for the advanced missions (NB6 + NB8)
 	@$(PY) scripts/gen_agent_queries.py
 	@$(PY) scripts/gen_spend.py
